@@ -1,2 +1,2 @@
-# E32CBLib
-Small MicroPython Library for our control board.
+# Micropython Module for E32CB
+
