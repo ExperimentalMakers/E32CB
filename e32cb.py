@@ -23,7 +23,6 @@ class E32CB:
 	pwm_min = 0
 	pwm_max = 1023
 
-	fan = PWM(Pin(23), freq=pwm_fan_freq, duty=0)
 
 	i2c  = I2C(scl=Pin(22), sda=Pin(21))
 	uart = UART(2, 9600)
@@ -46,3 +45,7 @@ class E32CB:
 	@staticmethod
 	def led(value):
 		Pin(32, Pin.OUT).value(value)
+
+	@staticmethod
+	def fan(value):
+		PWM(Pin(23), freq=pwm_fan_freq, duty=value);
