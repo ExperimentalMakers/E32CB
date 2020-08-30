@@ -4,6 +4,7 @@ from machine import Pin, Signal, PWM, I2C, UART
 class Mosfet:
 	def __init__(self, pin, pwm_base_freq, pwm_max):
 		self.__pwm = PWM(pin, freq=pwm_base_freq, duty=pwm_max)
+		self.off()
 
 	def pwm(self, pwm):
 		self.__pwm.duty(E32CB.invert_pwm(pwm))
